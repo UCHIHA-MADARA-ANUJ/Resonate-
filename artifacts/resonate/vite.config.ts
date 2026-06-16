@@ -28,10 +28,10 @@ if (!basePath) {
 
 export default defineConfig({
   base: basePath,
-  assetsInclude: ["**/*.glsl", "**/*.vert", "**/*.frag"],
   plugins: [
     {
       name: "glsl-loader",
+      enforce: "pre" as const,
       transform(src, id) {
         if (/\.(glsl|vert|frag)$/.test(id)) {
           return { code: `export default ${JSON.stringify(src)};`, map: null };
