@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MagneticElement } from "@/presentation/components/MagneticElement";
+import madaraImg from "@assets/g1h7uuanzez51_1781772614449.jpg";
+import ayanokojiImg from "@assets/4b70fb0a802ae4e14bed695f3e576db9_1781772643839.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,19 +57,30 @@ export default function FoundersPage() {
 
         <div className="flex flex-col gap-40">
 
-          {/* ── Founder 01: Anuj Phulera ─────────────────────────────── */}
+          {/* ── Founder 01: Anuj Phulera — Madara ─────────────────────── */}
           <div className="founder-card flex flex-col md:flex-row gap-16 items-center">
             <MagneticElement strength={0.1} className="w-full md:w-5/12 aspect-[3/4] relative group">
-              <div className="absolute inset-0 bg-void border border-white/20 p-8 flex flex-col justify-between overflow-hidden z-10 transition-transform duration-500 group-hover:-translate-y-4 group-hover:translate-x-4">
-                <div className="text-reso font-mono text-xs tracking-widest uppercase border border-reso px-2 py-1 w-max bg-reso/10">
+              {/* Drop shadow block */}
+              <div className="absolute inset-0 bg-reso/20 border border-reso/40 z-0 translate-y-4 -translate-x-4" />
+
+              {/* Image card */}
+              <div className="absolute inset-0 overflow-hidden z-10 border border-white/20 transition-transform duration-500 group-hover:-translate-y-4 group-hover:translate-x-4">
+                {/* Madara — position top to crop the bottom-left watermark */}
+                <img
+                  src={madaraImg}
+                  alt="Anuj Phulera"
+                  className="w-full h-full object-cover object-top"
+                  draggable={false}
+                />
+                {/* Cyan overlay on hover */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,240,255,0.25),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* ID badge */}
+                <div className="absolute top-6 left-6 text-reso font-mono text-xs tracking-widest uppercase border border-reso px-2 py-1 bg-black/70 backdrop-blur-sm">
                   ID: 001 // DEVELOPER
                 </div>
-                <div className="text-[15rem] font-display font-bold text-white/5 absolute -bottom-20 -right-10 select-none group-hover:text-reso/20 transition-colors duration-500">
-                  A
-                </div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,240,255,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Bottom gradient fade */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="absolute inset-0 bg-reso/20 border border-reso/40 z-0 translate-y-4 -translate-x-4" />
             </MagneticElement>
 
             <div className="w-full md:w-7/12 relative">
@@ -95,19 +108,29 @@ export default function FoundersPage() {
             </div>
           </div>
 
-          {/* ── Founder 02: Aarav Choudhary ─────────────────────────── */}
+          {/* ── Founder 02: Aarav Choudhary — Ayanokoji ──────────────── */}
           <div className="founder-card flex flex-col md:flex-row-reverse gap-16 items-center">
             <MagneticElement strength={0.1} className="w-full md:w-5/12 aspect-[3/4] relative group">
-              <div className="absolute inset-0 bg-void border border-white/20 p-8 flex flex-col justify-between overflow-hidden z-10 transition-transform duration-500 group-hover:-translate-y-4 group-hover:-translate-x-4">
-                <div className="text-shock font-mono text-xs tracking-widest uppercase border border-shock px-2 py-1 w-max bg-shock/10">
+              {/* Drop shadow block */}
+              <div className="absolute inset-0 bg-shock/20 border border-shock/40 z-0 translate-y-4 translate-x-4" />
+
+              {/* Image card */}
+              <div className="absolute inset-0 overflow-hidden z-10 border border-white/20 transition-transform duration-500 group-hover:-translate-y-4 group-hover:-translate-x-4">
+                <img
+                  src={ayanokojiImg}
+                  alt="Aarav Choudhary"
+                  className="w-full h-full object-cover object-center"
+                  draggable={false}
+                />
+                {/* Shock red overlay on hover */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,0,85,0.25),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* ID badge */}
+                <div className="absolute top-6 left-6 text-shock font-mono text-xs tracking-widest uppercase border border-shock px-2 py-1 bg-black/70 backdrop-blur-sm">
                   ID: 002 // VISIONARY
                 </div>
-                <div className="text-[15rem] font-display font-bold text-white/5 absolute -bottom-20 -left-10 select-none group-hover:text-shock/20 transition-colors duration-500">
-                  A
-                </div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,0,85,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Bottom gradient fade */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="absolute inset-0 bg-shock/20 border border-shock/40 z-0 translate-y-4 translate-x-4" />
             </MagneticElement>
 
             <div className="w-full md:w-7/12 relative text-left md:text-right">
